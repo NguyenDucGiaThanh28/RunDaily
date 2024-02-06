@@ -19,4 +19,4 @@ jobs:
 
       - name: Run daily task
         run: |
-          python crawl.py
+          python daily.py
