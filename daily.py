@@ -18,4 +18,5 @@ def main():
         file.write("Hello " + str(count) + "\n")
 
 if __name__ == "__main__":
+    print("Script is running")
     main()
