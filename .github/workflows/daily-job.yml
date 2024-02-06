@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x' # Chọn phiên bản Python bạn muốn sử dụng
+          python-version: '3.12.1' # Chọn phiên bản Python bạn muốn sử dụng
 
       - name: Run daily task
         run: |
