@@ -1,7 +1,7 @@
 def main():
     # Đọc số lần đã chạy từ file
     try:
-        with open("HelloWorld.txt", "r") as file:
+        with open("helloworld.txt", "r") as file:
             content = file.read()
             if content.strip() == "":
                 count = 0
@@ -14,7 +14,7 @@ def main():
     count += 1
 
     # Ghi "Hello n" vào file HelloWorld.txt
-    with open("HelloWorld.txt", "a") as file:
+    with open("helloworld.txt", "a") as file:
         file.write("Hello " + str(count) + "\n")
 
 if __name__ == "__main__":
