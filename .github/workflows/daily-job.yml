@@ -1,0 +1,22 @@
+name: Daily Job
+
+on:
+  schedule:
+    - cron: '*/1 * * * *' # Chạy mỗi 15 phút
+
+jobs:
+  run-job:
+    runs-on: windows-latest # Chạy trên Windows
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Chọn phiên bản Python bạn muốn sử dụng
+
+      - name: Run daily task
+        run: |
+          python crawl.py
