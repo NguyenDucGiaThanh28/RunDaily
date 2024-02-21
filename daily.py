@@ -1,6 +1,7 @@
-import os
-
-os.system('pip install -r requirements.txt')
+import requests
+from bs4 import BeautifulSoup
+import time
+import schedule
 banks_hose = ['ACB', 'BID', 'CTG','EIB', 'HDB', 'MBB', 'MSB','OCB','SHB','SSB','STB','TCB','TPB','VCB','VIB','VPB']
 banks_hnx = ['NVB', 'BAB']
 data = {}
@@ -14,7 +15,7 @@ class Stock:
         self.volume = volume
 
 def get_data_from_web(bank):
-    print('bank', bank)
+    print('bank',bank)
     url = f'https://simplize.vn/co-phieu/{bank}/lich-su-gia'
     response = requests.get(url)
     data = {}
@@ -43,5 +44,11 @@ def crawl(banks_hose,banks_hnx):
         data[bank] = get_data_from_web(bank)
     print(data)
     return data
-data = crawl(banks_hose,banks_hnx)
-print(data)
+def job():
+    data = crawl(banks_hose,banks_hnx)
+    print(data)
+schedule.every(1).minutes.do(job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
