@@ -1,7 +1,6 @@
-import requests
-from bs4 import BeautifulSoup
-import time
-# import schedule
+import os
+
+os.system('pip install -r requirements.txt')
 banks_hose = ['ACB', 'BID', 'CTG','EIB', 'HDB', 'MBB', 'MSB','OCB','SHB','SSB','STB','TCB','TPB','VCB','VIB','VPB']
 banks_hnx = ['NVB', 'BAB']
 data = {}
